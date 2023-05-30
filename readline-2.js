@@ -1,3 +1,4 @@
+//node readline-2.js  --- Executar
 const readline = require('readline');
 const fs = require('fs');
 
@@ -5,7 +6,6 @@ const readable = fs.createReadStream('Q:/APPS/SAP/EP0/Indicadores PCP_WEN/QUADRO
 
 const rl = readline.createInterface({
     input: readable,
-    //output: process.stdout
 });
 
 let lineNumber = 0;
@@ -49,5 +49,5 @@ rl.on('line', (line) => {
 
 rl.on('close', () => {
     fs.writeFileSync('dados.json', JSON.stringify(dados, null, 2));
-    console.log('Dados salvos em dados.json.');
+    console.log('Dados salvos em dados.json');
 });
